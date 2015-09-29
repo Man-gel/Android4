@@ -1,9 +1,11 @@
 package com.example.convertidor_mastered_;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class MainActivity extends Activity {
 
@@ -30,5 +32,29 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	public void convertirKms(View v)
+	{
+		lanzarIntKmToM();
+	}
+	
+	public void convertirGrados(View v)
+	{
+		lanzarIntCtoF();
+	}
+	
+	private void lanzarIntKmToM()
+	{
+		Intent intencion = new Intent(this, ActivityResultado.class);
+		startActivity(intencion);		
+	
+	}
+	
+	private void lanzarIntCtoF()
+	{
+		Intent intencion = new Intent(this, ActivityResultado2.class);
+		startActivity(intencion);		
+	
 	}
 }

@@ -8,11 +8,8 @@
     <string name="btn_km_main">Km a Millas</string>
     <string name="btn_grados_main">°C a °F</string>
     <string name="title_activity_activity_resultado2">°C a °F</string>
-    <string name="btn_txtConv">Convertir</string>
     <string name="btn_txtReset">Reset</string>
-    <string name="tv_promptKm">Ingrese Km</string>
     <string name="def_resM">0 Millas</string>
-    <string name="tv_promptC">Ingrese °C</string>
     <string name="def_resF">0 °F</string>
 
 </resources>

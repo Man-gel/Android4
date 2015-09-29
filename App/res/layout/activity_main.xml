@@ -22,18 +22,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/btn_mainDis"
+        android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/btn_mainDis"
-        android:layout_below="@+id/btn_mainDis"
-        android:layout_marginTop="103dp"
+        android:layout_marginBottom="45dp"
         android:text="@string/btn_grados_main" />
 
     <Button
         android:id="@+id/btn_mainDis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_mainGrados"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp"
+        android:text="@string/btn_km_main" />
+
+    <EditText
+        android:id="@+id/et_inputUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="94dp"
-        android:text="@string/btn_km_main" />
+        android:layout_marginTop="81dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
 
 </RelativeLayout>
