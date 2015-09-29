@@ -18,17 +18,17 @@
         android:text="@string/info_convertidor" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_mainGrados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_alignRight="@+id/button1"
-        android:layout_below="@+id/button1"
+        android:layout_alignLeft="@+id/btn_mainDis"
+        android:layout_alignRight="@+id/btn_mainDis"
+        android:layout_below="@+id/btn_mainDis"
         android:layout_marginTop="103dp"
         android:text="@string/btn_grados_main" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btn_mainDis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"

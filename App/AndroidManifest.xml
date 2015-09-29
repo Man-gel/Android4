@@ -29,6 +29,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.convertidor_mastered_.MainActivity" />
         </activity>
+        <activity
+            android:name=".ActivityResultado2"
+            android:label="@string/title_activity_activity_resultado2" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.convertidor_mastered_.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
