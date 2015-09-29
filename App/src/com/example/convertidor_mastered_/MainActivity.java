@@ -6,8 +6,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
+	
+	private EditText input;
+	private TextView info;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +24,9 @@ public class MainActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
+		input = (EditText)findViewById(R.id.et_inputUser);
+		info = (TextView)findViewById(R.id.tv_infoMain);
+		info.requestFocus();
 		return true;
 	}
 
@@ -47,6 +55,7 @@ public class MainActivity extends Activity {
 	private void lanzarIntKmToM()
 	{
 		Intent intencion = new Intent(this, ActivityResultado.class);
+		intencion.putExtra("input", Double.parseDouble(input.getText().toString()));
 		startActivity(intencion);		
 	
 	}
@@ -54,6 +63,7 @@ public class MainActivity extends Activity {
 	private void lanzarIntCtoF()
 	{
 		Intent intencion = new Intent(this, ActivityResultado2.class);
+		intencion.putExtra("input", Double.parseDouble(input.getText().toString()));
 		startActivity(intencion);		
 	
 	}
