@@ -22,6 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ActivityResultado"
+            android:label="@string/title_activity_activity_resultado" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.convertidor_mastered_.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
