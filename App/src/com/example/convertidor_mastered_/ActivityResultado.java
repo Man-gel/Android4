@@ -4,13 +4,19 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class ActivityResultado extends Activity {
+	
+	private TextView resKm;
+	Double input;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_resultado);
+		resKm = (TextView)findViewById(R.id.tv_resMillas);
+		obtenerYcalcularValor();
 	}
 
 	@Override
@@ -31,4 +37,14 @@ public class ActivityResultado extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	private void obtenerYcalcularValor()
+	{
+		Bundle recibido = getIntent().getExtras();
+		input = recibido.getDouble("input");
+		String res = (input * 0.62) + " Millas";
+		resKm.setText(res);
+	}
+	
+	
 }
