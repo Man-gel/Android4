@@ -1,13 +1,16 @@
 package com.example.convertidor_mastered_;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	
@@ -44,11 +47,21 @@ public class MainActivity extends Activity {
 	
 	public void convertirKms(View v)
 	{
+		if(input.getText().length() == 0)
+		{
+			mostrarToast("Debe ingresar un valor a convertir");
+			return;
+		}
 		lanzarIntKmToM();
 	}
 	
 	public void convertirGrados(View v)
 	{
+		if(input.getText().length() == 0)
+		{
+			mostrarToast("Debe ingresar un valor a convertir");
+			return;
+		}
 		lanzarIntCtoF();
 	}
 	
@@ -66,5 +79,13 @@ public class MainActivity extends Activity {
 		intencion.putExtra("input", Double.parseDouble(input.getText().toString()));
 		startActivity(intencion);		
 	
+	}
+	
+	private void mostrarToast(CharSequence mensaje)
+	{
+		Context contexto = getApplicationContext();
+		Toast toast = Toast.makeText(contexto, mensaje, 3);
+		toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, 0);
+		toast.show();	
 	}
 }
