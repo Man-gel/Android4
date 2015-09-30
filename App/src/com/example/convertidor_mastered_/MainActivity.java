@@ -1,5 +1,6 @@
 package com.example.convertidor_mastered_;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +17,7 @@ public class MainActivity extends Activity {
 	
 	private EditText input;
 	private TextView info;
+	private boolean reset;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,13 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	@Override
+	protected void onRestart()
+	{
+		super.onRestart();
+		recibirReset();
 	}
 	
 	public void convertirKms(View v)
@@ -81,11 +90,23 @@ public class MainActivity extends Activity {
 	
 	}
 	
+	@SuppressLint("ShowToast")
 	private void mostrarToast(CharSequence mensaje)
 	{
 		Context contexto = getApplicationContext();
 		Toast toast = Toast.makeText(contexto, mensaje, 3);
 		toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, 0);
 		toast.show();	
+	}
+	
+	private void recibirReset()
+	{
+		Bundle recibido = getIntent().getExtras();
+		reset = recibido.getBoolean("reset");
+		if(reset)
+		{
+			input.setText("");
+			input.requestFocus();
+		}
 	}
 }
