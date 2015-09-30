@@ -1,14 +1,17 @@
 package com.example.convertidor_mastered_;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 public class ActivityResultado2 extends Activity {
 	private TextView resGrados;
 	private Double input;
+	private boolean reset = true;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,18 @@ public class ActivityResultado2 extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 	
+	public void reset(View v)
+	{
+		resGrados.setText("0 °F");
+		enviarReset();
+	}
+	
+	private void enviarReset()
+	{
+		Intent intencion = new Intent(this, MainActivity.class);
+		intencion.putExtra("reset", reset);
+		startActivity(intencion);
+	}
 	private void obtenerYcalcularValor()
 	{
 		Bundle recibido = getIntent().getExtras();
