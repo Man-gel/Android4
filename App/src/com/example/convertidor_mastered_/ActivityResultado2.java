@@ -4,13 +4,18 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class ActivityResultado2 extends Activity {
+	private TextView resGrados;
+	private Double input;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_resultado2);
+		resGrados = (TextView)findViewById(R.id.tv_resFar);
+		obtenerYcalcularValor();
 	}
 
 	@Override
@@ -30,5 +35,13 @@ public class ActivityResultado2 extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	private void obtenerYcalcularValor()
+	{
+		Bundle recibido = getIntent().getExtras();
+		input = recibido.getDouble("input");
+		String res = ( (input * 1.8) + 32) + " °F";
+		resGrados.setText(res);
 	}
 }
