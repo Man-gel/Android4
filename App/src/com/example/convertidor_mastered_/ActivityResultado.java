@@ -1,15 +1,18 @@
 package com.example.convertidor_mastered_;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 public class ActivityResultado extends Activity {
 	
 	private TextView resKm;
-	Double input;
+	private Double input;
+	private boolean reset = true;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,19 @@ public class ActivityResultado extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	public void reset(View v)
+	{
+		resKm.setText("0 Millas");
+		enviarReset();
+	}
+	
+	private void enviarReset()
+	{
+		Intent intencion = new Intent(this, MainActivity.class);
+		intencion.putExtra("reset", reset);
+		startActivity(intencion);
 	}
 	
 	private void obtenerYcalcularValor()
